@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'myapp.apps.MyappConfig', #追加
+    'myapp2.apps.Myapp2Config',#tuika
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -1,0 +1,35 @@
+<!doctype html>
+  <html lang="ja">
+  <head>
+  <meta charset="UTF-8">
+  <title>Python 講座</title>
+  </head>
+  <body>
+  <h1>部署作成ページ</h1>
+
+  <!-- デーたの削除、追加、更新は formタグを使い
+    method="post"
+    {% csrf_token %}
+    <input type="submit" value="作成">か<button type="submit">作成</button>
+    が必ず必要
+    -->
+
+  <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="作成">
+  </form>
+  </body>
+  </html>
+
+
+<!--各入力欄を、divタグで囲う-->
+<!--{{ form.as_div }}-->
+
+<!--各入力欄を、pタグで囲う-->
+<!--{{ form.as_p }}-->
+
+<!--各入力欄を、tableを使って表示する-->
+<!--<table>-->
+<!--    {{ form.as_table }}-->
+<!--</table>-->
