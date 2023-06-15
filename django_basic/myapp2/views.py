@@ -1,8 +1,19 @@
-from django.views.generic import CreateView, DetailView, UpdateView, FormView
+from django.views import generic
+from django.views.generic import CreateView, DetailView, UpdateView, FormView, DetailView
 from django.urls import reverse_lazy
 from .models import StaffInformation, Department, Book, Staff
 from .forms import StaffInformationForm, DepartmentForm, BookForm, StaffForm
 
+class StaffDetailView(generic.DetailView):
+    model = Staff
+    template_name = 'myapp2/staff_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        staff = self.get_object()
+        context['books'] = staff.rented_books.all()
+        return context
 
 class StaffInformationCreateView(CreateView):
     model = StaffInformation

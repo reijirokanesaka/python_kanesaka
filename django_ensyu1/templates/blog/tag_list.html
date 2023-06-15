@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>タグの一覧表示</h1>
+
+        {% for tag in tag_list %}
+            {{ tag.name }}
+        {% endfor %}
+</body>
+</html>
