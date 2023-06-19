@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!--UpdateViewでは、{{ form }}という名前のほかに、-->
+<!--{{ goods }}のようにモデル名小文字でモデルインスタンスが渡されています。(DetailViewと同じ)-->
+<h2>{{goods.name}}の商品情報更新ページ</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" id="save" value="更新">
+</form>
+
+{% endblock %}

@@ -9,4 +9,7 @@ urlpatterns = [
     path('article/detail/<int:pk>/', views.ArticleDetailView.as_view(), name='article_detail'),
     path('tag/list/', views.TagListView.as_view(), name='tag_list'),
     path('article/create/', views.ArticleCreateView.as_view(), name='article_create'),
+    path('article_update/<int:pk>/', views.ArticleUpdate.as_view(), name='article_update'),
+    path('article_delete/<int:pk>/', views.ArticleDelete.as_view(), name='article_delete')
+
 ]
