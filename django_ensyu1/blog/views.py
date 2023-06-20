@@ -29,13 +29,13 @@ class ArticleCreateView(generic.CreateView):
 class ArticleUpdate(generic.UpdateView):
     model = Article
     form_class = ArticleUpdateForm
-    template_name = 'crud/article_update.html'
-    success_url = reverse_lazy('crud:article_list')
+    template_name = 'blog/article_update.html'
+    success_url = reverse_lazy('blog:article_list')
 
 class ArticleDelete(generic.DeleteView):
     # フォームは必要なし
     model = Article
-    template_name = 'crud/article_delete.html'
-    success_url = reverse_lazy('crud:article_list')
+    template_name = 'blog/article_delete.html'
+    success_url = reverse_lazy('blog:article_list')
 
 # Create your views here.
