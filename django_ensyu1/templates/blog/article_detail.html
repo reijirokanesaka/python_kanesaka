@@ -9,4 +9,14 @@
             {{ tag.name }}
         {% endfor %}
     </p>
+    <hr>
+<!-- モデルインスタンス.紐づいたモデル名小文字_set.all -->
+{% for comment in article.comment_set.all %}
+    <div>
+        <p>{{ comment.name }}</p>
+        <p>{{ comment.text | linebreaks }}</p>
+    </div>
+    <hr>
+{% endfor %}
+<a href="{% url 'blog:comment_create' article.id %}">コメント作成ページへ</a>
 {% endblock %}

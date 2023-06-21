@@ -11,7 +11,7 @@
     {% endfor %}
 
     <!-- 戻るボタン -->
-    <form action="{% url 'contacts:corporate_input' %}" method="POST">
+    <form action="{% url 'contacts:corporate_contact_create' %}" method="POST">
         {% for field in form %}
             {{ field.as_hidden }}
         {% endfor %}
@@ -21,7 +21,7 @@
     <hr>
 
     <!-- 送信ボタン -->
-    <form action="{% url 'contacts:corporate_create' %}" method="POST">
+    <form action="{% url 'contacts:corporate_contact_confirm' %}" method="POST">
         {% for field in form %}
          {{ field.as_hidden }}
         {% endfor %}

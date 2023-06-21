@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
+<form action="" method="GET">
+  {{ form.as_div }}
+  <button type="submit">検索</button>
+</form>
     {% for article in article_list %}
       <p>
           <a href="{% url 'blog:article_detail' article.pk %}">{{ article.title }}</a>
